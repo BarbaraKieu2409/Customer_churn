@@ -1,0 +1,7 @@
+"Marital_status","Attrition_flag","count(*)","percentage"
+Married,Existing Customer,3035,42.8612
+Single,Existing Customer,2456,34.6844
+Divorced,Existing Customer,477,6.7363
+Married,Attrited Customer,529,7.4707
+Single,Attrited Customer,492,6.9482
+Divorced,Attrited Customer,92,1.2993

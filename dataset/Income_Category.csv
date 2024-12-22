@@ -1,0 +1,11 @@
+"Income_Category","Attrition_flag","count(*)","percentage","Percentage_income"
+$120K +,Attrited Customer,102,1.4405,17.8322
+$120K +,Existing Customer,470,6.6375,82.1678
+$40K - $60K,Existing Customer,1208,17.0597,85.5524
+$40K - $60K,Attrited Customer,204,2.8809,14.4476
+$60K - $80K,Existing Customer,958,13.5292,86.8540
+$60K - $80K,Attrited Customer,145,2.0477,13.1460
+$80K - $120K,Existing Customer,1013,14.3059,84.2762
+$80K - $120K,Attrited Customer,189,2.6691,15.7238
+Less than $40K,Existing Customer,2319,32.7496,83.0587
+Less than $40K,Attrited Customer,473,6.6798,16.9413

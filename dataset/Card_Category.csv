@@ -1,0 +1,17 @@
+"Attrition_Flag","Card_Category","Gender","count(*)","percentage"
+Existing Customer,Blue,M,2891,40.8276
+Existing Customer,Blue,F,2673,37.7489
+Attrited Customer,Blue,F,553,7.8096
+Existing Customer,Gold,F,17,0.2401
+Existing Customer,Silver,F,108,1.5252
+Attrited Customer,Blue,M,481,6.7928
+Attrited Customer,Silver,M,48,0.6779
+Existing Customer,Silver,M,220,3.1069
+Existing Customer,Gold,M,51,0.7202
+Attrited Customer,Silver,F,15,0.2118
+Attrited Customer,Platinum,F,2,0.0282
+Attrited Customer,Gold,M,7,0.0989
+Attrited Customer,Gold,F,6,0.0847
+Existing Customer,Platinum,M,7,0.0989
+Attrited Customer,Platinum,M,1,0.0141
+Existing Customer,Platinum,F,1,0.0141

@@ -1,0 +1,15 @@
+"Attrition_Flag","Months_Inactive_12_mon","count(*)","percentage"
+Existing Customer,1,1460,20.6186
+Existing Customer,2,1972,27.8492
+Existing Customer,3,2154,30.4194
+Existing Customer,6,64,0.9038
+Attrited Customer,3,570,8.0497
+Existing Customer,0,10,0.1412
+Existing Customer,5,107,1.5111
+Existing Customer,4,201,2.8386
+Attrited Customer,4,88,1.2428
+Attrited Customer,2,348,4.9146
+Attrited Customer,1,65,0.9179
+Attrited Customer,5,22,0.3107
+Attrited Customer,0,9,0.1271
+Attrited Customer,6,11,0.1553

@@ -1,0 +1,5 @@
+"Attrition_Flag","Gender","count(*)","percentage","percentage_gender"
+Existing Customer,F,2799,39.5283,82.9333
+Attrited Customer,F,576,8.1344,17.0667
+Existing Customer,M,3169,44.7536,85.5100
+Attrited Customer,M,537,7.5837,14.4900

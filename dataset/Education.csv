@@ -1,0 +1,13 @@
+"Education_Level","Attrition_Flag","count(*)","percentage"
+High School,Existing Customer,1416,19.9972
+Graduate,Existing Customer,2185,30.8572
+Uneducated,Existing Customer,1018,14.3765
+College,Existing Customer,712,10.0551
+Post-Graduate,Existing Customer,354,4.9993
+Doctorate,Existing Customer,283,3.9966
+Graduate,Attrited Customer,406,5.7337
+High School,Attrited Customer,237,3.3470
+College,Attrited Customer,132,1.8641
+Uneducated,Attrited Customer,186,2.6267
+Post-Graduate,Attrited Customer,77,1.0874
+Doctorate,Attrited Customer,75,1.0592
