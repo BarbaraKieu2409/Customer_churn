@@ -1,8 +1,8 @@
 """ Business context:  
 In the banking sector, customer retention is a critical aspect of sustaining profitability and growth, 
 espectical for services that rely on recurring use, such as credit cards. The dataset for this project represents a financial institution
-dealing with increasing customer churn, which impacts the bank’s revenue and reputation. Predicting which customers are at risk of leaving enables
-the bank to intervene with retention efforts, such as personalized offers or improved service, to decrease turnover and foster customer loyalty
+dealing with increasing customer churn, which impacts the bank’s revenue and reputation. This project aims to analyze the reasons why customers
+discontinue the company's services. From there, it will develop appropriate strategies for the future.
 Objective: 
 Analyze which factors affect the churn rate of bank customers.
 Provide actionable insights for bank to reduce churn rate and improve its business
@@ -183,7 +183,7 @@ WHERE b.Avg_Utilization_Ratio IS NULL;
 """Analyze data"""
 
 -- Calculate counts for each catefgory of Attrition_Flag 
-CREATE TABLE Attition_flag AS 
+--CREATE TABLE Attition_flag AS 
 SELECT COUNT(Attrition_Flag) AS Distribution_of_Attrition_Flag, Attrition_Flag 
 FROM Churner
 GROUP BY Attrition_Flag;
@@ -193,7 +193,7 @@ GROUP BY Attrition_Flag;
 SELECT *
 FROM Churner ;
 
-CREATE TABLE Gender AS 
+--CREATE TABLE Gender AS 
 SELECT Attrition_Flag, Gender, count(*), count(*) * 100/SUM(count(*)) OVER () AS percentage,
 count(*)*100 / Sum(count(*)) OVER (PARTITION BY Gender) AS percentage_gender
 FROM Churner C
@@ -203,47 +203,47 @@ Group By Attrition_Flag , Gender;
 SELECT DISTINCT Income_Category 
 FROM Churner c;
 
-CREATE TABLE Income_Category AS 
+--CREATE TABLE Income_Category AS 
 SELECT Income_Category, Attrition_flag, count(*),  count(*) * 100/SUM(count(*)) OVER () AS percentage,
 count(*)*100 / Sum(count(*)) OVER (PARTITION BY Income_Category) AS Percentage_income
 FROM Churner c 
 GROUP BY Income_Category , Attrition_Flag;
 
 -- Attrition Percentage By customer__Age - Attrition_Flag
-CREATE TABLE Customer_Age AS
+--CREATE TABLE Customer_Age AS
 SELECT Customer_Age , Attrition_flag, count(*),  count(*) * 100/SUM(count(*)) OVER () AS percentage,
 count(*)*100 / Sum(count(*)) OVER (PARTITION BY Customer_Age) AS Percentage_Customer_Age
 FROM Churner c 
 GROUP BY Customer_Age , Attrition_Flag;
 
 -- Attrition Percentage By Card Category - Gender -Attrition_Flag
-CREATE TABLE Card_Category AS 
+--CREATE TABLE Card_Category AS 
 SELECT Attrition_Flag, Card_Category , Gender, count(*), count(*) * 100/SUM(count(*)) OVER () AS percentage
 FROM Churner 
 GROUP BY Attrition_Flag , Card_Category, Gender
 
 -- Depedent_count ( how many people are dependent on a credit card)
-CREATE TABLE Dependent_count AS
+--CREATE TABLE Dependent_count AS
 SELECT Attrition_Flag, Dependent_count , count(*)
 FROM Churner 
 GROUP BY Attrition_Flag, Dependent_count;
 
 
 -- Marital_status, count(*), percentage, total_count, Percenatage status
-CREATE TABLE Marital_status AS
+--CREATE TABLE Marital_status AS
 SELECT  Marital_status,Attrition_flag, count(*), count(*) * 100/SUM(count(*)) OVER () AS percentage
 FROM Churner c 
 GROUP BY Marital_status,Attrition_flag
 
 
 -- Attrition_flag by Months_on_book
-CREATE TABLE Months_on_book AS
+--CREATE TABLE Months_on_book AS
 SELECT  Months_on_book ,Attrition_flag, count(*), count(*) * 100/SUM(count(*)) OVER () AS percentage
 FROM Churner c 
 GROUP BY Months_on_book ,Attrition_flag;
 
 -- Percentage of Attrition by Education_Level, nên tính total count của mỗi level, và phần trăm 
-CREATE TABLE Education AS
+--CREATE TABLE Education AS
 SELECT Education_Level,Attrition_Flag, count(*), count(*) * 100/SUM(count(*)) OVER () AS percentage
 FROM Churner 
 GROUP BY Education_Level, Attrition_flag;
@@ -257,29 +257,29 @@ FROM Churner;
 
 -- Change in Transaction Count (Q4 over Q1)  - Total_Ct_Chng_Q4_Q1
 -- Total count change Q4 to Q1 by Attrition Flag ( box )
-CREATE TABLE Trans_count_Q4_over_Q1 AS
+--CREATE TABLE Trans_count_Q4_over_Q1 AS
 SELECT Total_Ct_Chng_Q4_Q1, Attrition_Flag  #Box chart 
 FROM Churner;
 
 -- Calculate the sum of Total_Ct_Chng_Q4_Q1for each category of Attrition_Flag
-CREATE TABLE Total_Count_change_Q4_Q1 AS 
+--CREATE TABLE Total_Count_change_Q4_Q1 AS 
 SELECT SUM(Total_Ct_Chng_Q4_Q1) AS Total_Count_Change_Q4_Q1_By_Attrition_Flag, Attrition_Flag
 FROM Churner
 GROUP BY Attrition_Flag ;  #Bar chart 
 
 -- Total Revolving Balance on the Credit Card 
-CREATE TABLE Revolving_Balance AS 
+--CREATE TABLE Revolving_Balance AS 
 SELECT Total_Revolving_Bal, Attrition_Flag 
 FROM Churner ;
 
 -- Calculate the sum of Total_Revolving_Bal for each category of Attrition_Flag 
-CREATE TABLE Total_Revolving_Balance AS 
+--CREATE TABLE Total_Revolving_Balance AS 
 SELECT SUM(Total_Revolving_Bal) AS Total_Revolving_Balance, Attrition_Flag 
 FROM Churner
 GROUP BY Attrition_Flag ;  #Bar chart 
 
 -- No. of Contacts in the last 12 months (contacts_count_12_mon)
-CREATE TABLE No_of_Contacts AS 
+--CREATE TABLE No_of_Contacts AS 
 SELECT Attrition_Flag, Months_Inactive_12_mon, count(*), count(*) * 100/SUM(count(*)) OVER () AS percentage
 FROM Churner
 GROUP BY  Attrition_Flag, Months_Inactive_12_mon ; 
@@ -306,18 +306,18 @@ WHERE Attrition_Flag = "Attrited Customer"
 GROUP BY Contacts_Count_12_mon , Attrition_flag;  #Bar chart 
 
 -- Average Card Utilization Ratio by Attrition flag 
-CREATE TABLE Avg_Utilization_Ratio AS
+--CREATE TABLE Avg_Utilization_Ratio AS
 SELECT Avg_Utilization_Ratio , Attrition_Flag 
 FROM Churner;
 
 -- total Avg_Utilization_Ratio by Attrition flag 
-CREATE TABLE Total_Avg_Utilization_Ratio AS 
+--CREATE TABLE Total_Avg_Utilization_Ratio AS 
 SELECT SUM(Avg_Utilization_Ratio) AS Total_Utilization_Ratio, Attrition_Flag
 FROM Churner 
 GROUP BY
 Attrition_Flag;
 
--- credit limit , nên cho nó thành một khoảng 
+-- credit limit 
 SELECT *
 FROM Churner;
 
